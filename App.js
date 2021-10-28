@@ -11,8 +11,11 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
-
+import CarItems from './components/carItem/CarItems';
+import cars from "./utils/cars"
+// import pic from "./assets/images"
+import CarList from './components/carlist/CarList';
+// console.log("object",cars)
 const Stack = createStackNavigator()
 const Tabs = createBottomTabNavigator()
 const Taba = createMaterialBottomTabNavigator();
@@ -27,17 +30,13 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <Provider store={Store}>
+{/* <CarItem/> */}
+
+
 
     <View style = {styles.body}>
-<View style={styles.carContainer}>
-<ImageBackground source={require("./assets/images/ModelX.jpeg")} style={styles.image}/>
-<View style={styles.titles} >
-
-  <Text style={styles.title}> Model S</Text>
-  <Text style={styles.subtitle}> Starting at $69,000</Text>
-</View>
-
-</View>
+    {/* <CarItems/> */}
+<CarList/>
       
     </View>
     </Provider>
@@ -55,49 +54,8 @@ backgroundColor:"#fff"
 
 
 
-  },
+  }
 
-  text:{
-fontFamily:'Nunito-ExtraBold',
-
-fontSize:40
-
-
-  },
-  carContainer:{
-width:"100%",
-height:"100%",
-  },
-  titles:{
-
-    marginTop:"30%",
-width:"100%",
-alignItems:"center",
-
-// backgroundColor:"red"
-
-
-
-
-  },
-  title:{
-fontSize:40,
-fontWeight:"bold"
-
-  },
-subtitle:{
-fontSize:16,
-
-color:"#5c5e62"
-
-},
-
-image:{
-  width:"100%",
-  height:"100%",
-  resizeMode:"cover",
-position:"absolute"
-
-}
+ 
 
 })
